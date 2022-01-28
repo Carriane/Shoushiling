@@ -4,13 +4,13 @@ let rounds = 0;
 
 function playerPlay() {
     const playerInput = prompt('Type rock, paper or scissors');
-    if (playerInput === 'rock' || playerInput === "paper" || playerInput === "scissors") {
-        if (typeof playerInput === 'string'){
-            playerInput.toLowerCase();
+    if (typeof playerInput === 'string'){
+        playerInput.toLowerCase();
+        if(playerInput === 'rock' || playerInput === "paper" || playerInput === "scissors"){
+            return playerInput;
         }else {
             console.log('Input is not valid');
-        }
-        return playerInput;
+        }   
     }else {
         return console.log('Error, please type rock, paper, or scissors!')
     }
@@ -31,41 +31,38 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         ++computerScore;
         ++playerScore;
-        return "Tie!"
+        console.log("Tie!");
     }
     if (playerSelection === 'rock') {
         if (computerSelection === 'paper'){
             ++computerScore;
-            return "Paper Covers Rock! Computer Won!";
+            console.log( "Paper Covers Rock! Computer Won!");
     }else {
           ++playerScore;
-          return "Rock Crushes! You Won!";
+          console.log( "Rock Crushes! You Won!");
         }
     } 
 
     if (playerSelection === 'paper') {
         if (computerSelection === 'scissors'){
             ++computerScore;
-            return "Scissor Cuts Paper! Computer Won!";
+            console.log( "Scissor Cuts Paper! Computer Won!");
        }else {
             ++playerScore;
-            return "Paper Covers Rock! You Won!";
+            console.log( "Paper Covers Rock! You Won!");
        }
     }
     
     if (playerSelection === 'scissors') {
        if (computerSelection === 'rock'){
            ++computerScore;
-           return "Rock Crushes! Computer Won!"
+           console.log( "Rock Crushes! Computer Won!");
        }else {
            ++playerScore; 
-           return "Scissor Cuts Paper! You Won!"
+           console.log( "Scissor Cuts Paper! You Won!");
        }
      }
 };
-
-const playerSelection = playerPlay();
-const computerSelection = computerPlay();
 
 
 function winner() {
@@ -82,9 +79,7 @@ function winner() {
 
 function game() {
     while (rounds != 5) {
-        ++rounds;
-        console.log('You selected' + " " + playerSelection);
-        console.log('Computer selected' + " " + computerSelection);
+        ++rounds;   
         console.log(playRound(playerPlay(), computerPlay())); 
     }  
     if (rounds = 5) {
