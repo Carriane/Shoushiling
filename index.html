@@ -8,74 +8,7 @@
 </head>
 <body>
 
-    <script>
-        function computerPlay() {
-            const randomNumber = Math.floor(Math.random() * 3);
-            if (randomNumber === 1) {
-                return 'rock';
-            }else if (randomNumber === 2) {
-                return 'paper';
-            }else {
-                return 'scissors';
-            }
-        };
-
-        let computerScore = 0;
-        let playerScore = 0;
-        
-        function playRound(playerSelection, computerSelection) {
-              
-            if (playerSelection === computerSelection) {
-                return "Tie!"
-                computerScore++;
-                playerScore++;
-            }
-            if (playerSelection === 'rock') {
-                if (computerSelection === 'paper'){
-                computerScore++;
-                return "Paper Covers Rock! Computer Won!";
-                }  else {
-                playerScore++;
-                return "Rock Crushes! You Won!";
-                }
-            } 
-            if (playerSelection === 'paper') {
-            if (computerSelection === 'scissors'){
-                computerScore++;
-                return "Scissor Cuts Paper! Computer Won!";
-            }else {
-                playerScore++;
-                return "Paper Covers Rock! You Won!";
-                }
-            }
-            if (playerSelection === 'scissors') {
-            if (computerSelection === 'rock'){
-                computerScore++;
-                return "Rock Crushes! Computer Won!";
-            }else {
-                playerScore++;
-                return "Scissor Cuts Paper! You Won!";
-                }
-            }
-
-        };
-
-        const playerSelection = prompt("Enter a selection?");
-        const computerSelection = computerPlay();
-      
-
-        function game() {
-            
-            if (computerScore <= 5 || playerScore <= 5){
-                // console.log(playerSelection);
-                // console.log(computerSelection);
-                // console.log(playRound(playerSelection, computerSelection));
-                break;
-            } 
-        };
-
-        game();
-
-    </script>
+    <script type="text/javascript" src="gamelogic.js"></script>
+    <h1>Shoushiling!!</h1>
 </body>
 </html>
