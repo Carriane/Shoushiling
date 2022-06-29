@@ -80,8 +80,12 @@ function winner() {
 function game() {
     while (rounds != 5) {
         ++rounds;   
-        console.log(playRound(playerPlay(), computerPlay())); 
-    }  
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach((button) => {
+        button.addEventListener('click', playRound);
+        }) 
+    } 
+
     if (rounds = 5) {
             alert('Game Over!');
             winner();
@@ -90,3 +94,4 @@ function game() {
 
 
 game();
+
