@@ -60,6 +60,8 @@ function playerPlay() {
     function ScissorsMessage() {
         document.getElementById('scissorschosen').innerHTML += "You chose Scissors!" + "<br>";
     }
+
+    // if (rock.target.id === 'rock')
     // if (typeof playerInput === 'string'){
     //     playerInput.toLowerCase();
     //     if(playerInput === 'rock' || playerInput === "paper" || playerInput === "scissors"){
@@ -75,11 +77,11 @@ function playerPlay() {
 function computerPlay() {
     const randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber === 1) {
-        document.insertBefore;
+        document.getElementById('rockchosen1').innerHTML += "Computer chose Rock!" + "<br>";
     }else if (randomNumber === 2) {
-        alert('paper');
+        document.getElementById('paperchosen2').innerHTML += "Computer chose Paper!" + "<br>";
     }else {
-        alert('scissors');
+        document.getElementById('scissorschosen3').innerHTML += "Computer chose Scissors!" + "<br>";
     }
 };
 
@@ -91,8 +93,8 @@ function winner() {
     }else {
         alert("Tie!")
     }
-    console.log(computerScore);
-    console.log(playerScore);
+    alert(computerScore);
+    alert(playerScore);
 };
 
 // function game() {
