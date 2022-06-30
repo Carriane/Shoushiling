@@ -2,68 +2,86 @@ let computerScore = 0;
 let playerScore = 0;
 let rounds = 0;
 
-function playerPlay() {
-    const playerInput = prompt('Type rock, paper or scissors');
-    if (typeof playerInput === 'string'){
-        playerInput.toLowerCase();
-        if(playerInput === 'rock' || playerInput === "paper" || playerInput === "scissors"){
-            return playerInput;
-        }else {
-            console.log('Input is not valid');
-        }   
-    }else {
-        return console.log('Error, please type rock, paper, or scissors!')
-    }
-};
-
-function computerPlay() {
-    const randomNumber = Math.floor(Math.random() * 3);
-    if (randomNumber === 1) {
-        return 'rock';
-    }else if (randomNumber === 2) {
-        return 'paper';
-    }else {
-        return 'scissors';
-    }
-};
-
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         ++computerScore;
         ++playerScore;
-        console.log("Tie!");
+        alert("Tie!");
     }
     if (playerSelection === 'rock') {
         if (computerSelection === 'paper'){
             ++computerScore;
-            console.log( "Paper Covers Rock! Computer Won!");
+            alert( "Paper Covers Rock! Computer Won!");
     }else {
           ++playerScore;
-          console.log( "Rock Crushes! You Won!");
+          alert( "Rock Crushes! You Won!");
         }
     } 
 
     if (playerSelection === 'paper') {
         if (computerSelection === 'scissors'){
             ++computerScore;
-            console.log( "Scissor Cuts Paper! Computer Won!");
+            alert( "Scissor Cuts Paper! Computer Won!");
        }else {
             ++playerScore;
-            console.log( "Paper Covers Rock! You Won!");
+            alert( "Paper Covers Rock! You Won!");
        }
     }
     
     if (playerSelection === 'scissors') {
        if (computerSelection === 'rock'){
            ++computerScore;
-           console.log( "Rock Crushes! Computer Won!");
+           alert( "Rock Crushes! Computer Won!");
        }else {
            ++playerScore; 
-           console.log( "Scissor Cuts Paper! You Won!");
+           alert( "Scissor Cuts Paper! You Won!");
        }
      }
 };
 
+function playerPlay() {
+    const rock = document.getElementById('rock');
+    const paper = document.getElementById('paper')
+    const scissors = document.getElementById('scissors')
+
+    rock.addEventListener('click', RockMessage);
+    paper.addEventListener('click', PaperMessage);
+    scissors.addEventListener('click', ScissorsMessage);
+
+
+    function RockMessage() {
+        document.getElementById('rockchosen').innerHTML += "You chose Rock!" + "<br>";
+    }
+
+    function PaperMessage() {
+        document.getElementById('paperchosen').innerHTML += "You chose Paper!" + "<br>";
+    }
+
+    function ScissorsMessage() {
+        document.getElementById('scissorschosen').innerHTML += "You chose Scissors!" + "<br>";
+    }
+    // if (typeof playerInput === 'string'){
+    //     playerInput.toLowerCase();
+    //     if(playerInput === 'rock' || playerInput === "paper" || playerInput === "scissors"){
+    //         document.write(playerInput);
+    //     }else {
+    //         document.write('Input is not valid');
+    //     }   
+    // }else {
+    //     return document.write('Error, please type rock, paper, or scissors!')
+    // }
+};
+
+function computerPlay() {
+    const randomNumber = Math.floor(Math.random() * 3);
+    if (randomNumber === 1) {
+        document.insertBefore;
+    }else if (randomNumber === 2) {
+        alert('paper');
+    }else {
+        alert('scissors');
+    }
+};
 
 function winner() {
     if (computerScore > playerScore){
@@ -77,21 +95,21 @@ function winner() {
     console.log(playerScore);
 };
 
-function game() {
-    while (rounds != 5) {
-        ++rounds;   
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach((button) => {
-        button.addEventListener('click', playRound);
-        }) 
-    } 
+// function game() {
+    // while (rounds != 5) {
+    //     ++rounds;   
+    console.log(playRound(playerPlay(), computerPlay())); 
+    // } 
 
-    if (rounds = 5) {
-            alert('Game Over!');
-            winner();
-    }    
-};
+    // if (rounds = 5) {
+    //         alert('Game Over!');
+    //         winner();
+    // } 
+    
+// };
 
 
-game();
+// game();
+
+
 
