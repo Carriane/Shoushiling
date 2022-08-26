@@ -16,6 +16,10 @@ body, h1, h2{
     grid-template: 100px 100px 100px;;
 }
 
+img {
+    width: 200px;
+    height: 200px;
+}
 .item {
    
     border: 4px solid black;
