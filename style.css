@@ -3,6 +3,9 @@ body, h1, h2{
     text-align: center;
     color: #fff!important;
     background-color: #000!important;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
   }
 
 .container {
