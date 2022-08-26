@@ -8,12 +8,9 @@ body, h1, h2{
     font-weight: bold;
   }
 
-.container {
-    padding: 30px;
-    border: 5px solid black;
-    gap: 10px;
-    display: grid;
-    grid-template: 100px 100px 100px;;
+.box {
+   display: flex;
+   justify-content: space-around;
 }
 
 img {
