@@ -60,34 +60,47 @@ function winner() {
         document.getElementById('winner').innerHTML = "Rounds are Tie!";
     }
 
-    document.getElementById('pscore').innerHTML = computerScore;
-    document.getElementById('cscore').innerHTML = playerScore;
+    document.getElementById('cscore').innerHTML = computerScore;
+    document.getElementById('pscore').innerHTML = playerScore;
 };
 
 function game() {
     ++rounds;
     if (rounds == 5) {
-        document.getElementById('game').innerHTML = 'Game Over!';
+        function gameover () {
+            document.getElementById('game').innerHTML = 'Game Over!';
+            setTimeout(function(){gameover()}, 1000);
+        }
+        gameover();
         rounds = 0;
-        playerScore = 0;
         computerScore = 0;
+        playerScore = 0;
     }          
 };
 
+const link = document.createElement('link');
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = 'style.css';
+document.getElementsByTagName('HEAD')[0].appendChild(link);
 
+const rcontainer = document.querySelector('.btn-container');
 const rock = document.createElement('button');
 rock.innerHTML = 'Rock';
 rock.addEventListener('click', function () {playRound(computerPlay(), 'rock')});
-document.body.appendChild(rock);
+rock.classList.add('button-86');
+rcontainer.appendChild(rock);
 
 const paper = document.createElement('button');
 paper.innerHTML = 'Paper';
 paper.addEventListener('click', function() {playRound(computerPlay(), 'paper')});
-document.body.appendChild(paper);
+paper.classList.add('button-86');
+rcontainer.appendChild(paper);
 
 const scissors = document.createElement('button');
 scissors.innerHTML = 'Scissors';
 scissors.addEventListener('click', function() {playRound(computerPlay(), 'scissors')});
-document.body.appendChild(scissors);
+scissors.classList.add('button-86');
+rcontainer.appendChild(scissors);
 
-
+// document.body.style.backgroundColor = "grey";
