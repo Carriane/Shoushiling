@@ -68,8 +68,7 @@ function game() {
     ++rounds;
     if (rounds == 5) {
         function gameover () {
-            document.getElementById('game').innerHTML = 'Game Over!';
-            setTimeout(function(){gameover()}, 1000);
+             document.getElementById('game').innerHTML = 'Again!';
         }
         gameover();
         rounds = 0;
@@ -103,4 +102,4 @@ scissors.addEventListener('click', function() {playRound(computerPlay(), 'scisso
 scissors.classList.add('button-86');
 rcontainer.appendChild(scissors);
 
-// document.body.style.backgroundColor = "grey";
+
